@@ -20,15 +20,14 @@ class _TaskTileState extends State<TaskTile> {
   Widget build(BuildContext context) {
     return ListTile(
         title: Text(widget.task.title),
-        leading: Icon(Icons.delete),
-        trailing: Checkbox(
-          value: widget.task.isCompleted,
-          onChanged: (value) {
-            setState(() {
-              widget.task.isCompleted = value!;
-            });
-          },
-        ),
+        leading: Checkbox(
+            value: widget.task.isCompleted,
+            onChanged: (value) {
+              setState(() {
+                widget.task.isCompleted = value!;
+              });
+            }),
+        trailing: Icon(Icons.delete),
         onTap: () {
           widget.onTaskDelete();
           ScaffoldMessenger.of(context).showSnackBar(

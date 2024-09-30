@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/screen/async_screen.dart';
 import 'package:helloworld/screen/second_lab_screen.dart';
 import 'package:helloworld/screen/todo_list_screen.dart';
 
@@ -48,6 +49,17 @@ class ButtonScreen extends StatelessWidget {
                 );
               },
               child: const Text('Second Lab'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AsyncNsLab(),
+                  ),
+                );
+              },
+              child: const Text('Async Lab'),
             ),
           ],
         ),
